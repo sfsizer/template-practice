@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import "tailwindcss";
+
+@theme{
+    --font-primary: 'Rajdhani', sans-serif;
+    --font-secondary: 'Rubik', sans-serif;
+    --color-primary: #FF014F;
+    --color-secondary: #FFB800;
+    --color-danger: #dc3545;
+    --color-dark: rgba(255,255,255,0.062745098);
+    --color-gray: #141414;
+    --color-black: #060606;
+    --color-white: #FFFFFF;
+    --color-gray-light: #9F9F9F;
+    --background-image-gradient: linear-gradient(90deg, #141414 20%, #FF014F 80%);
+}
+body{
+    @apply bg-black text-white;
+}
+.container{
+    @apply 2xl:w-360 xl:w-292.5 px-4 xl:px-0 mx-auto;
+}
+h1,h2,h3,h4,h5,h6{
+    @apply font-primary;
+}
+p{
+    @apply font-secondary;
+}
+section{
+    @apply py-6.25 lg:py-12.5;
+}
+/* ========== Header ========== */
+.main-menu ul li a{
+    @apply font-semibold text-base text-white hover:text-primary transition;
+
+}
+.mobile-menu ul li a{
+    @apply font-semibold text-base text-white hover:text-primary transition;
+}
+.menu-social{
+    @apply flex items-center gap-2;
+}
+.menu-social a{
+    @apply text-white transition text-sm w-10 h-10 bg-gray rounded-full transition-all duration-[400ms] ease-in-out  flex justify-center items-center relative;
+
+}
+.footer-menu-social a{
+    @apply text-white transition text-sm w-10 h-10 bg-gray rounded-full transition-all duration-[400ms] ease-in-out  flex justify-center items-center relative;
+
+}
+.mobile-menu-social a{
+    @apply text-white transition text-sm w-10 h-10 bg-gray rounded-full transition-all duration-[400ms] ease-in-out  flex justify-center items-center relative font-medium;
+}
+.menu-social a:hover{
+    @apply bg-primary cursor-pointer;
+
+}
+.footer-menu-social a:hover{
+    @apply bg-primary cursor-pointer;
+
+}
+.mobile-menu-social a:hover{
+    @apply bg-primary cursor-pointer;
+
+}
+.main-menu, .menu-social{
+    @apply hidden lg:flex;
+}
+
+
+/* Hero Section */
+
+.hero-section{
+    @apply  bg-[url('../assets/images/hero-bg.png')] bg-cover bg-center relative overflow-hidden w-full flex items-center ;
+}
+h1{
+    @apply font-primary  font-bold;
+}
+h1 .hello{
+    @apply text-[1.75rem] leading-[1.6em];
+}
+h1 .name{
+    @apply text-4xl lg:text-[3.375rem] leading-[1.6em];
+}
+h1 #typed{
+    @apply text-4xl lg:text-[3.375rem] text-primary font-primary font-bold;
+}
+.hero-content h1 .typed-cursor{
+    @apply hidden;
+}
+.hero-content p{
+    @apply font-secondary text-gray-light;
+}
+.hero-content .hero-btn{
+    @apply inline-flex items-center gap-2 bg-primary text-white font-semibold text-base px-6 py-3 rounded-full transition-all duration-[400ms] ease-in-out hover:bg-secondary hover:text-black w-50;
+}
+.hero-image{
+    @apply bg-transparent  overflow-hidden relative;
+}
+.hero-img-bg{
+    @apply relative;
+}
+.hero-image .hero-img-bg{
+    @apply w-full h-full ;
+}
+.hero-image img{
+    @apply  bg-no-repeat bg-transparent overflow-hidden p-10 animate-[float_3s_ease-in-out_infinite] z-10 relative filter-[drop-shadow(0_10px_10px_rgba(255,0,79,0.5))]; 
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.hero-image .hero-animate-text{
+    @apply absolute text-secondary font-primary font-extrabold text-5xl bottom-10 left-1/2 transform -translate-x-1/2 animate-[float_1s_ease-in-out_infinite] z-9 top-20;
+}
+.hero-image .hero-animate-textd{
+    @apply absolute text-secondary font-primary font-extrabold text-4xl bottom-10 left-1/2 transform -translate-x-1/2 animate-[float_1s_ease-in-out_infinite] z-11 bottom-0;
+}
+
+/* Skills Section */
+.skill-section{
+    @apply bg-black;
+}
+.skill-card{
+    @apply flex flex-col items-center gap-2.5 p-10 rounded-lg border border-danger w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-13.34px)] xl:w-[calc(25%-15px)];
+}
+.skill-card i{
+    @apply text-primary text-5xl mb-4;
+}
+.skill-card h3{
+    @apply text-2xl leading-8.5 font-bold text-white hover:text-primary transition duration-75 ease-in-out cursor-pointer;
+}
+.skill-card p{
+    @apply text-gray-light text-center text-base leading-6.5 font-secondary;
+}
+.experience-card-right div{
+    @apply hover:border-primary hover:border-1  cursor-pointer;
+}
+.dev-icon{
+    @apply flex items-center justify-center gap-y-2.5 flex-col relative;
+}
+.dev-icon i{
+    @apply text-primary text-6xl mb-4 text-center;
+}
+.dev-icon .dev-text{
+    @apply text-white text-lg font-secondary;
+}
+.dev-icon .circle1 i{
+    @apply absolute text-primary text-base opacity-60 bottom-0 left-2 hidden;
+}
+.dev-icon .circle2 i{
+    @apply absolute text-primary text-3xl opacity-60 top-5 right-5 hidden;
+}
+.dev-icon:hover .circle1 i{
+    @apply flex animate-[bounce_1s_ease-in-out_infinite];
+}
+.dev-icon:hover .circle2 i{
+    @apply flex animate-[bounce_1s_ease-in-out_infinite];
+}
+/* Contact Us Section */
+.contact .contact-left{
+    @apply text-white flex flex-col gap-y-5;
+}

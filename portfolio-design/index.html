@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ========== Tailwind Css Link ========== -->
+    <link rel="stylesheet" href="./src/output.css">
+    <!-- ========== Custome Css Link ========== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- ========== Font-awesome CDN Link ========== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <title>Portfolio</title>
+</head>
+<body>
+    <!-- ========== Heder Section Start ========== -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-primary">
+            <i class="fa-solid fa-code"></i> Portfolio
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="main-menu hidden md:block">
+            <ul class="flex items-center gap-8 text-white">
+                <li><a href="#home" class="hover:text-primary transition nav_link">Home</a></li>
+                <li><a href="#project" class="hover:text-primary transition nav_link">Projects</a></li>
+                <li><a href="#skill" class="hover:text-primary transition nav_link">Skills</a></li>
+                <li><a href="#service" class="hover:text-primary transition nav_link">Service</a></li>
+                <li><a href="#contact" class="hover:text-primary transition nav_link">Contact</a></li>
+            </ul>
+            </nav>
+
+            <!-- Desktop Social -->
+            <div class="menu-social hidden md:flex items-center gap-4 text-white">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden flex flex-col justify-between w-6 h-5 z-50 focus:outline-none cursor-pointer">
+            <span class="block h-0.5 w-full bg-red-500 transform transition duration-300"></span>
+            <span class="block h-0.5 w-full bg-red-500 transform transition duration-300"></span>
+            <span class="block h-0.5 w-full bg-red-500 transform transition duration-300"></span>
+            </button>
+            <!-- Mobile menu -->
+             <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-black text-white transform translate-x-full transition-transform duration-300 z-40 p-8 md:hidden">
+
+                <ul class="mobile-main-menu flex flex-col gap-6 mt-10 text-lg">
+                    <li><a href="#home" class="hover:text-primary transition nav_link">Home</a></li>
+                    <li><a href="#project" class="hover:text-primary transition nav_link">Projects</a></li>
+                    <li><a href="#skill" class="hover:text-primary transition nav_link">Skills</a></li>
+                    <li><a href="#service" class="hover:text-primary transition nav_link">Service</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition nav_link">Contact</a></li>
+                </ul>
+
+                <div class="mobile-menu-social flex gap-4 mt-10 border-t pt-6">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ========== Heder Section End ========== -->
+    <!-- ========== Hero Section Start ========== -->
+    <section id="home" class="hero-section  h-auto -py-6.25 lg:-py-12.5">
+        <div class="container flex flex-col-reverse md:flex-row gap-y-12.5 items-center justify-between gap-12.5 ">
+            <div class="hero-content w-full md:w-1/2 flex flex-col gap-6 ">
+                <h1 class="font-bold text-primary flex flex-col">
+                    <span class="hello">HELLO</span> 
+                    <span class="name">I'm Md.Shahriar a</span> 
+                    <span id="typed"></span>
+                </h1>
+                <p class="text-gray-light text-lg">
+                    A passionate web developer with expertise in creating stunning and responsive websites. I specialize in front-end development and have a strong command of HTML, CSS, PHP, Wordpress, JavaScript, Elementor and various frameworks.
+                </p>
+                <div class=" flex flex-col lg:flex-row  items-center gap-5 gap-y-5">
+                    <a href="#" class="hero-btn">
+                        View My Work <span  class="text-2xl"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                    <a href="#" class="hero-btn items-center justify-center">
+                        Resume <span  class="text-2xl"><i class="fa-solid fa-download"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image w-full  md:w-1/2">
+                <div class="hero-img-bg h-full  w-full relative">
+                    <img  src="assets/images/new2.png" alt="Hero Image" class="w-full h-full object-cover">
+                    <h3 class="md:flex hidden hero-animate-text">Web Designer</h3>
+                    <h3 class="hero-animate-textd">Web Developer</h3>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- ========== Hero Section End ========== -->
+    <!-- ========== Project Section Start ========== -->
+    <section id="project" class=" container ">
+        <div class="pt-6.25 lg:pt-12.5">
+            <!-- Section Title -->
+            <div class="section-title-wrapper">
+                <h2 class="section_title"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">My Project<span></span></h2>
+            </div>
+
+            <!-- ================= Tabs ================= -->
+            <div class="w-full flex justify-center mb-14 px-4">
+    
+                 <!-- Scroll wrapper for mobile -->
+                <div class="w-full overflow-x-auto scrollbar-hide">
+        
+                <div class="relative flex items-center justify-start md:justify-center gap-2 p-2 rounded-xl backdrop-blur-xl bg-white/10 border border-white/20 min-w-max">
+
+                    <!-- Sliding Background -->
+                    <div id="tab-indicator"
+                        class="absolute top-2 left-2 h-10 bg-primary rounded-xl 
+                        transition-all duration-500 ease-out">
+                        </div>
+
+                        <button data-tab="all" class="tab-btn relative z-10 px-6 py-2 rounded-full whitespace-nowrap cursor-pointer">
+                            All
+                        </button>
+
+                        <button data-tab="web-design" class="tab-btn relative z-10 px-6 py-2 rounded-full whitespace-nowrap cursor-pointer">
+                            Web Design
+                        </button>
+
+                        <button data-tab="web-development" class="tab-btn relative z-10 px-6 py-2 rounded-full whitespace-nowrap cursor-pointer">
+                            Web Dev
+                        </button>
+
+                        <button data-tab="wordpress" class="tab-btn relative z-10 px-6 py-2 rounded-full whitespace-nowrap cursor-pointer">
+                            WordPress
+                        </button>
+
+                        <button data-tab="elementor" class="tab-btn relative z-10 px-6 py-2 rounded-full whitespace-nowrap cursor-pointer">
+                            Elementor
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>    
+
+                <!-- ================= Projects ================= -->
+            <div id="projects" class="grid md:grid-cols-3 gap-8">
+
+                <!-- Card -->
+                <div class="project-card web-design group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-500">
+
+                    <!-- Image -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/600/400?1" 
+                        class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center gap-6">
+
+                            <a href="#" class="text-white text-2xl hover:text-blue-400 transition">
+                            <i class="fab fa-github"></i>
+                            </a>
+
+                            <a href="#" class="text-white text-2xl hover:text-green-400 transition">
+                            <i class="fas fa-up-right-from-square"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Creative Landing Page</h3>
+
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-sm rounded-full bg-blue-500/20 text-blue-400">HTML</span>
+                            <span class="px-3 py-1 text-sm rounded-full bg-yellow-500/20 text-yellow-400">JS</span>
+                            <span class="px-3 py-1 text-sm rounded-full bg-pink-500/20 text-pink-400">CSS</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Duplicate card for demo -->
+                <div class="project-card wordpress group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-500">
+
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/600/400?2" 
+                            class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center gap-6">
+                            <a href="#" class="text-white text-2xl hover:text-blue-400 transition">
+                            <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-white text-2xl hover:text-green-400 transition">
+                            <i class="fas fa-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">WordPress Business Site</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-sm rounded-full bg-blue-500/20 text-blue-400">WordPress</span>
+                            <span class="px-3 py-1 text-sm rounded-full bg-green-500/20 text-green-400">Elementor</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                    <!-- Empty card -->
+                    <div id="empty-message" class="hidden text-center py-20 col-span-3">
+
+                        <h3 class="text-2xl font-semibold text-gray-400">
+                            No Projects Found
+                        </h3>
+
+                        <p class="text-gray-500 mt-2">
+                            This category is currently empty.
+                        </p>
+
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== Project Section End ========== -->
+    <!-- ========== Skills Section Start ========== -->
+    <section id="skill" class="skills">
+        <!-- Section Title -->
+        <div class="section-title-wrapper">
+            <h2 class="section_title"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">My Skills<span></span></h2>
+        </div>
+        <div class="skills-card container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-brands fa-html5"></i>
+                    <span class="dev-text">Html</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span class="dev-text">Css</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span class="dev-text">Tailwind</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-brands fa-php"></i>
+                    <span class="dev-text">Php</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-brands fa-js"></i>
+                    <span class="dev-text">JavaScript</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fas fa-database"></i>
+                    <span class="dev-text">mySql</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-brands fa-wordpress-simple"></i>
+                    <span class="dev-text">Wordpress</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+                <div class="dev-icon  bg-dark py-10 rounded-xl items-center justify-center">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span class="dev-text">Elementor</span>
+                    <span class="circle1"><i class="fa-regular fa-circle"></i></span>
+                    <span class="circle2"><i class="fa-regular fa-circle"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== Skills Section End ========== -->
+    <!-- ========== Service Section Start ========== -->
+    <section id="service" class="skill-section flex flex-col gap-12">
+        <!-- Section Title -->
+        <div class="section-title-wrapper">
+            <h2 class="section_title"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">My Services<span></span></h2>
+        </div>
+                <!-- Service Cards -->
+        <div class="container flex flex-col md:flex-row items-center  gap-7 md:gap-5  md:flex-wrap flex-nowrap">
+            <!-- Service Card 1 -->
+            <div class="skill-card">
+                <i class="fa-solid fa-bezier-curve"></i>
+                <h3 class="text-xl font-bold text-primary">Web Design</h3>
+            </div>
+            <!-- Service Card 2 -->
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3 class="text-xl font-bold text-primary">Web Development</h3>
+            </div>
+            <!-- Service Card 3 -->
+            <div class="skill-card">
+                <i class="fa-solid fa-bezier-curve"></i>
+                <h3 class="text-xl font-bold text-primary">UI/UX Design</h3>
+            </div>
+            <!-- Service Card 4 -->
+            <div class="skill-card">
+                <i class="fa-brands fa-wordpress-simple"></i>
+                <h3 class="text-xl font-bold text-primary">Wordpress</h3>
+            </div>
+        </div>
+        <!-- Experience -->
+        <div class="container flex flex-col md:flex-row items-center justify-between gap-7">
+            <!-- Experience Card left -->
+            <div class="experience-card-left w-full md:w-1/2 flex flex-col gap-y-7 bg-gradient py-12 px-20 rounded-xl">
+                <h3 class="text-2xl leading-8 md:text-4xl md:leading-12 xl:text-5xl xl:leading-15.75 font-bold text-white flex items-center gap-5 md:gap-7 lg:gap-15">
+                    <span class="text-5xl leading-13 md:text-7xl md:leading-20 xl:text-[10.438rem] xl:leading-46 text-primary">25</span> <span>Years of Experience</span>
+                </h3>
+                <p class="text-white text-base leading-6.5">
+                    I’m a passionate Web Designer and WordPress Developer with a strong eye for clean and user-friendly design.
+                </p>
+            </div>
+            <!-- Experience Card right -->
+            <div class="experience-card-right grid grid-cols-1 md:grid-cols-2 gap-5 w-full md:w-1/2">
+                <div class="bg-dark py-10 rounded-xl items-center justify-center">
+                    <h3 class="text-5xl leading-15.75 font-bold text-white text-center">20k+</h3>
+                    <p class="text-gray-light text-base leading-6.5 text-center">
+                        Our Project Complete 1
+                    </p>
+                </div>
+                <div class="bg-dark py-10 rounded-xl items-center justify-center">
+                    <h3 class="text-5xl leading-15.75 font-bold text-white text-center">20k+</h3>
+                    <p class="text-gray-light text-base leading-6.5 text-center">
+                        Our Project Complete 2
+                    </p>
+                </div>
+                <div class="bg-dark py-10 rounded-xl items-center justify-center">
+                    <h3 class="text-5xl leading-15.75 font-bold text-white text-center">20k+</h3>
+                    <p class="text-gray-light text-base leading-6.5 text-center">
+                        Our Project Complete 3
+                    </p>
+                </div>
+                <div class="bg-dark py-10 rounded-xl items-center justify-center">
+                    <h3 class="text-5xl leading-15.75 font-bold text-white text-center">20k+</h3>
+                    <p class="text-gray-light text-base leading-6.5 text-center">
+                        Our Project Complete 4
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- ========== Service Section End ========== -->
+    <!-- ========== Contact Section Start ========== -->
+    <section id="contact" class="contact bg-black">
+        <!-- Section Title -->
+        <div class="section-title-wrapper">
+            <h2 class="section_title"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Contact Me<span></span></h2>
+        </div>
+        <div class="container bg-dark rounded-xl">
+            <div class="flex flex-col lg:flex-row items-center justify-between py-25 lg:px-15 gap-y-5">
+                <div class="w-full lg:w-[calc(40%-25px)] contact-left">
+                    <h3 class="flex gap-2 items-center">
+                        <span class="relative flex size-3">
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex size-3 rounded-full bg-primary"></span>
+                        </span>
+                        <span class="text-xl font-secondary font-medium leading-7 text-white">get in touch</span>
+                    </h3>
+                    <h2 class="text-5xl leading-15 font-primary font-bold ">
+                        Elevate your brand with Me
+                    </h2>
+                    <p class="text-base ">
+                        WordPress Developer & Web Designer
+                        Crafting modern, responsive & powerful websites
+                        Let’s build your online presence together
+                    </p>
+                </div>
+                <div class="w-full lg:w-[calc(60%-25px)] contact-right">
+                    <form action="#" class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="">
+                                <input type="text" placeholder="Your Name" class="w-full contact-input py-5 px-3 text-white border-2 border-gray-light rounded-xl focus:outline-none  hover:border-primary focus:ring-primary focus:ring-2">
+                            </div>
+                            <div class="">
+                                <input type="text" placeholder="Phone Number" class="w-full contact-input py-5 px-3 text-white border-2 border-gray-light rounded-xl focus:outline-none  hover:border-primary focus:ring-primary focus:ring-2">
+                            </div>
+                            <div class="">
+                                <input type="email" placeholder="Your Email" class="w-full contact-input py-5 px-3 text-white border-2 border-gray-light rounded-xl focus:outline-none  hover:border-primary focus:ring-primary focus:ring-2">
+                            </div>
+                            <div class="">
+                                <input type="email" placeholder="Subject" class="w-full contact-input py-5 px-3 text-white border-2 border-gray-light rounded-xl focus:outline-none  hover:border-primary focus:ring-primary focus:ring-2">
+                            </div>
+                            <div class="md:col-span-2 ">
+                                <textarea placeholder="Your Message" class="w-full contact-input py-5 px-3 text-white border-2 border-gray-light rounded-xl focus:outline-none  hover:border-primary focus:ring-primary resize-none h-32 focus:ring-2"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full py-5 px-3 text-white rounded-full bg-primary cursor-pointer text-base font-medium font-secondary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== Skills Section End ========== -->
+
+    <!-- ========== Footer Section Start ========== -->
+    <footer class="bg-dark py-4">
+        <div class="flex flex-col items-center justify-center gap-4">
+            <div class="pt-10">
+                <div class="logo flex flex-col items-center gap-y-4">
+                    <a href="#" class="text-2xl font-bold text-primary">
+                        <i class="fa-solid fa-code"></i> Md. Shahriar
+                    </a>
+                    <p class="text-white bg-primary px-4 py-2 rounded-full">
+                        md.shahriar1999@gmail.com
+                    </p>
+                    <div class="footer-menu-social flex items-center gap-4 text-white">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+            <span class="w-full h-0.5 bg-primary"></span>
+            <div class="container text-center text-gray-light">
+                &copy; 2024 Md.Shahriar. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- ========== Footer Section End ========== -->
+    
+
+    <!-- ========== JavaScripts Link ========== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
