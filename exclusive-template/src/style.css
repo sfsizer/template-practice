@@ -1,0 +1,754 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #DB4444;
+  --color-secondary: #00FF66;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-bg: #F5F5F5;
+  --color-text-light: #FAFAFA;
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+
+}
+body{
+  @apply bg-white text-black font-primary;
+}
+.container{
+  @apply xl:w-7xl xl:px-12.5 lg:w-5xl lg:px-7.5 2xl:px-20 mx-auto px-4;
+}
+.section-sm-title{
+  @apply text-base font-semibold font-secondary text-primary leading-5;
+}
+.section-title{
+  @apply text-4xl font-semibold font-primary text-black leading-12 tracking-[1.44px];
+}
+.view-all-btn{
+  @apply text-base font-medium leading-6 text-text-light font-secondary cursor-pointer py-4 px-12 bg-primary rounded-[4px] transition duration-300 ease-in-out;
+}
+.view-all-btn-google{
+  @apply text-base font-medium leading-6 text-black font-secondary cursor-pointer py-4 px-12 bg-white rounded-[4px] transition duration-300 ease-in-out w-full flex gap-4 items-center justify-center border border-gray-300;
+}
+.view-all-btn:hover{
+  @apply text-black bg-secondary;
+}
+.add-cart-btn{
+  @apply text-base font-medium leading-6 text-white font-secondary cursor-pointer py-2 px-4 w-full text-center bg-black hover:bg-primary rounded-b-[4px] transition duration-300 ease-in-out absolute bottom-0 left-0 invisible opacity-0 ;
+}
+.buy-now-btn{
+  @apply text-base font-medium leading-6 text-text-light font-secondary cursor-pointer py-4 px-12 bg-secondary rounded-[4px] transition duration-300 ease-in-out;
+}
+.buy-now-btn:hover{
+  @apply text-black bg-primary;
+}
+/* ========== Header Styles ==========  */
+header{
+  @apply flex items-center justify-between pt-12 pb-8 sticky top-0 bg-white z-50;
+}
+.logo{
+  @apply text-2xl font-bold text-black leading-6 tracking-[0.72px] font-primary;
+}
+.menu-style{
+  @apply font-secondary text-base font-normal text-black leading-6;
+}
+.menu-style ul{
+  @apply flex gap-12;
+}
+.menu-style ul li {
+  @apply cursor-pointer;
+}
+.menu-style ul li:hover a{
+  @apply text-primary;
+}
+.menu-style ul li a{
+  @apply font-secondary text-base font-normal text-black leading-6;
+}
+.right-menu{
+  @apply flex items-center gap-4;
+}
+.search{
+  @apply flex items-center gap-8.5 mr-2 bg-bg py-1.75 pl-5 pr-3 rounded-[4px];
+}
+.search input{
+  @apply border border-none px-2 py-1 focus:outline-none text-sm font-secondary text-black bg-transparent font-normal leading-4.5;
+}
+.search button{
+  @apply cursor-pointer
+}
+.wishlist svg{
+  @apply cursor-pointer;
+}
+.cart button{
+  @apply cursor-pointer w-8 h-8;
+}
+.user button{
+  @apply cursor-pointer w-8 h-8;
+}
+
+.user-drop{
+  @apply w-80 py-4 px-5 rounded-[4px] bg-secondary absolute top-25 right-10 shadow-lg 
+  opacity-0 invisible scale-95 transition-all duration-300 ease-in-out;
+}
+
+.user-drop.active{
+  @apply opacity-100 visible scale-100;
+}
+
+.user-drop ul{
+  @apply flex flex-col gap-4;
+}
+
+.user-drop ul li a{
+  @apply flex items-center gap-2 text-base font-normal text-black leading-6 font-secondary cursor-pointer;
+}
+/* responsive menu */
+.menu-toggle{
+  @apply hidden text-3xl cursor-pointer;
+}
+
+/* tablet + mobile */
+@media (max-width:1034px){
+
+  header{
+    @apply pt-6 pb-6;
+  }
+
+  .menu-toggle{
+    @apply block;
+  }
+
+  .menu-style{
+    @apply absolute top-full left-0 w-full bg-white shadow-lg hidden;
+  }
+
+  .menu-style ul{
+    @apply flex flex-col gap-4 p-6;
+  }
+
+  .menu-style.active{
+    @apply block;
+  }
+
+  .right-menu{
+    @apply gap-2;
+  }
+
+  .search{
+    @apply hidden;
+  }
+
+}
+/* ========== Hero Section Styles ==========  */
+.hero .container{
+  @apply flex flex-col-reverse lg:flex-row items-center gap-11.25 gap-y-7.5 pb-10 lg:pb-35;
+}
+.hero-sidebar{
+  @apply w-full lg:w-[18%] pr-4 lg:border-r lg:border-gray-300 lg:pt-10;
+}
+.hero-sidebar .category-menu ul{
+  @apply flex flex-col gap-4;
+}
+.hero-sidebar .category-menu ul li a{
+  @apply cursor-pointer text-base font-normal text-black leading-6 hover:text-primary font-secondary;
+}
+.hero-carosol{
+  @apply w-full lg:w-[80%] bg-black lg:max-h-86 relative -mb-7.5;
+}
+.hero-slide {
+  @apply flex flex-col lg:flex-row items-center gap-10 justify-between lg:pl-16 pr-2 bg-black ;
+}
+.hero-slide .left{
+  @apply py-7.5 px-4 lg:py-12 flex flex-col gap-y-5;
+}
+.hero-slide .left .left-lc{
+  @apply flex items-center gap-6;
+}
+.hero-slide .left .left-lc .brand-logo{
+  @apply w-10 h-12.75;
+
+}
+.hero-slide .left .left-lc .brand-name span{
+  @apply text-base font-normal text-white leading-6 font-secondary;
+}
+.hero-slide .left .voucher{
+  @apply text-5xl font-semibold font-primary text-white leading-15 tracking-[1.92px];
+}
+.slider-btn{
+  @apply text-base font-medium leading-6 text-white cursor-pointer;
+}
+.slider-btn  button{
+  @apply hover:text-primary flex items-center gap-2;
+}
+.hero-slide .right{
+  @apply lg:max-w-124 lg:max-h-88;
+}
+.hero-slide .right img{
+  @apply w-full h-full object-cover;
+}
+ul.slick-dots{
+  @apply absolute bottom-2.5;
+}
+/* ========== Flash Sale ==========  */
+.flash-sale{
+  @apply pb-15 border-b border-gray-300;
+}
+.flash-title{
+  @apply flex flex-col gap-y-6 pb-10;
+}
+.flash-day{
+  @apply flex items-center gap-4;
+}
+.flash-day span{
+  @apply w-5 h-10 bg-primary rounded-[4px];
+}
+.flash-time{
+  @apply flex flex-col lg:flex-row  lg:items-center gap-y-7.5 gap-21.75;
+}
+.end-time{
+  @apply flex items-center gap-5;
+}
+.end-time .day,
+.end-time .hour,
+.end-time .minute,
+.end-time .second{
+  @apply flex flex-col items-center gap-y-2;
+}
+.end-time .day p,
+.end-time .hour p,
+.end-time .minute p,
+.end-time .second p{
+  @apply text-[0.75rem] font-secondary text-black font-medium leading-4.5;
+}
+.end-time .day span,
+.end-time .hour span,
+.end-time .minute span,
+.end-time .second span{
+  @apply text-[2rem] font-primary text-black font-bold leading-7.5 tracking-[1.28px];
+}
+.end-time .time-dot{
+  @apply text-[1.75rem] font-primary text-primary;
+}
+.flash-slider{
+  @apply pb-15 lg:pr-12;
+}
+.flash-slide{
+  @apply w-full lg:w-67.5 h-87.5 rounded-t-[4px] cursor-pointer;
+}
+.left-arrow,
+.right-arrow{
+  @apply bg-bg w-11.5 h-11.5 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition duration-300 ease-in-out p-2.75 absolute -top-43 lg:-top-21.5 right-0 z-10;
+}
+.left-arrow{
+  @apply right-13.5;
+}
+
+.flash-slide:hover .add-cart-btn{
+  @apply visible opacity-100;
+}
+.flash-slide-wrapper{
+  @apply flex flex-col gap-y-4;
+}
+.flash-product-image{
+  @apply w-full h-62.5 object-cover overflow-hidden p-12.5 bg-bg rounded-[4px] relative;
+}
+.flash-product-image .discount{
+  @apply absolute top-2.5 left-2.5 bg-primary text-white text-[.75rem] font-secondary font-normal leading-4.5 px-3  py-2 rounded-[4px];
+}
+.flash-product-image .wq{
+  @apply absolute top-2.5 right-2.5 flex flex-col items-center gap-y-2;
+}
+.flash-product-image .wq .wishlist,
+.flash-product-image .wq .quick-view{
+  @apply w-8.5 h-8.5 p-1.25 bg-white rounded-full flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition duration-300 ease-in-out;
+}
+.flash-product-image img{
+  @apply w-full h-full  overflow-hidden;
+}
+.flash-product-content{
+  @apply flex flex-col gap-y-2;
+}
+.flash-product-content h4{
+  @apply  text-base font-medium text-black leading-6 font-secondary;
+}
+.flash-product-price{
+  @apply flex items-center gap-3;
+}
+.flash-product-price p{
+  @apply text-base font-medium leading-6 text-primary font-secondary;
+}
+.flash-product-content .reviews span{
+  @apply text-sm font-semibold leading-5.25 text-black font-secondary;
+}
+.flash-product-content .review{
+  @apply flex items-center gap-1;
+}
+.flash-product-button{
+  @apply flex items-center justify-center;
+}
+.flash-slider .slick-slide{
+margin:0 15px;
+}
+
+.flash-slider .slick-list{
+margin:0 -15px;
+}
+/* ========== Category Sale ==========  */
+.categories{
+  @apply pt-20 pb-17.5 border-b border-gray-300;
+}
+.category-slide{
+  @apply border border-[#0000004d] p-6 w-42.5 rounded-[4px];
+}
+.category .category-icon{
+  @apply w-14 h-14 overflow-hidden;
+}
+.category .category-icon img{
+  @apply w-full h-full object-cover;
+}
+.category-slide-wrapper{
+  @apply flex flex-col items-center  gap-y-4 justify-center;
+}
+.category-slide-wrapper .category-name a{
+  @apply text-base font-normal text-black hover:text-primary leading-6 text-center font-secondary;
+}
+.category-slider .slick-slide{
+margin:0 15px;
+}
+
+.category-slider .slick-list{
+margin:0 -15px;
+}
+/* ========== Best Sale ==========  */
+.best-selling{
+  @apply py-17.5;
+}
+.best-selling-title{
+  @apply flex items-center justify-between;
+}
+.best-sell-sliders .slick-slide{
+margin:0 15px;
+}
+
+.best-sell-sliders .slick-list{
+margin:0 -15px;
+}
+/* ========== Category Sale ==========  */
+.categories-sell{
+  @apply py-17.5;
+}
+.category-sell-wrapper{
+  @apply flex flex-col lg:flex-row items-center justify-between px-5 lg:px-15 lg:gap-7.5;
+}
+.category-sell-content{
+  @apply flex flex-col gap-y-8 w-full lg:w-[48%] pt-10 lg:pt-0 lg:py-17.25;
+}
+.category-sell-content h2{
+  @apply text-base font-semibold text-secondary leading-5 font-secondary;
+}
+.category-sell-content p{
+  @apply text-5xl font-semibold leading-15 tracking-[1.92px] text-text-light font-primary pr-10;
+}
+.category-sell-img{
+  @apply w-full lg:w-[48%] ;
+}
+.category-sell-img img{
+  @apply w-full h-full object-cover px-4  overflow-hidden;
+}
+/* ========== Our Product Section ==========  */
+.our-product{
+  @apply py-17.5;
+}
+
+.our-product-sliders .slick-slide{
+margin:0 15px;
+}
+
+.our-product-sliders .slick-list{
+margin:0 -15px;
+}
+/* ========== Featured Product Section ==========  */
+.featured-category-content{
+  @apply flex flex-col gap-y-4 absolute bottom-8 left-8 z-10;
+}
+.featured-sm-category-content{
+  @apply flex flex-col gap-y-2 absolute bottom-6 left-6 z-10;
+}
+.featured-category-content h3,
+.featured-sm-category-content h3{
+  @apply text-2xl font-semibold text-text-light leading-6 tracking-[0.72px] font-primary;
+}
+.featured-category-content p,
+.featured-sm-category-content p{
+  @apply text-sm font-normal text-text-light leading-5.25 font-secondary;
+}
+.featured-shop-btn{
+  @apply text-base font-medium leading-6 font-secondary  text-white  hover:text-primary  transition duration-300 ease-in-out underline underline-offset-6;
+}
+/* Footer Section */
+.footer-logo{
+  @apply flex flex-col gap-y-6 w-full xl:w-[30%];
+}
+.support,
+.account,
+.qc-link,
+.social{
+  @apply flex flex-col gap-y-6 w-full xl:w-[17.5%];
+}
+.footer-logo a,
+.support h4,
+.account h4,
+.qc-link h4,
+.social h4{
+  @apply text-2xl font-bold text-text-light leading-6 tracking-[0.72px] font-primary;
+}
+.footer-logo h4{
+  @apply text-xl font-medium text-text-light leading-7 font-secondary;
+}
+.footer-logo .cta{
+  @apply flex flex-col gap-y-4 ;
+}
+.footer-logo .cta p{
+  @apply text-base font-normal text-text-light leading-6 font-secondary;
+}
+.cta-mail{
+  @apply flex items-center gap-4 mr-2 bg-transparent py-1.75 pl-4 pr-3 rounded-[4px] border justify-around border-text-light;
+}
+.cta-mail input{
+  @apply border border-none px-2 py-1 focus:outline-none text-sm font-secondary text-text-light bg-transparent font-normal leading-4.5 w-2/3;
+}
+.cta-mail button{
+  @apply cursor-pointer;
+}
+.support .address,
+.account .account-link,
+.qc-link .quick-link{
+  @apply flex flex-col  gap-4;
+}
+.social .social-link{
+  @apply flex gap-4;
+}
+.support p,
+.support a,
+.account-link a,
+.quick-link a,
+.social-link a{
+  @apply text-base font-normal text-text-light leading-6 font-secondary;
+}
+/* ===== Sign Up Section ===== */
+.sign-up{
+  @apply py-17.5;
+}
+.sign-up-wrapper{
+  @apply flex flex-col-reverse lg:flex-row items-center gap-10 justify-between;
+}
+
+.sign-up-image,
+.sign-up-form{
+  @apply w-full lg:w-[48%];
+}
+.sign-up-image img{
+  @apply w-full h-full object-cover overflow-hidden;
+}
+.sign-up-form{
+  @apply flex flex-col gap-y-12;
+}
+.sign-up-form-title{
+  @apply flex flex-col gap-y-6;
+}
+.sign-up-form-title h2{
+  @apply text-4xl font-medium leading-7.5 tracking-[1.44px] text-black font-primary;
+}
+.sign-up-form-title p{
+  @apply text-base font-normal leading-6 text-black font-secondary;
+}
+.registration-form form{
+  @apply flex flex-col gap-y-10;
+}
+.registration-form form input{
+  @apply border-b border-gray-300 rounded-[4px] py-2 px-4 focus:outline-none text-base font-secondary text-black leading-6
+  ;
+}
+.registration-form{
+  @apply flex flex-col gap-y-4;
+}
+.sign-up-google{
+  @apply flex flex-col gap-y-8.5; 
+}
+.sign-up-login-alt{
+  @apply flex items-center justify-center gap-4;
+}
+.sign-up-login-alt p{
+  @apply text-base font-normal leading-6 text-black font-secondary;
+}
+.sign-up-login-alt a{
+  @apply text-base font-normal leading-6 text-black font-secondary underline underline-offset-4 cursor-pointer;
+}
+/* login */
+.login-btn-group{
+  @apply flex items-center justify-between;
+}
+/* ==== Wishlist Section ==== */
+
+.wishlist-top-btn{
+  @apply text-base font-medium leading-6 text-black font-secondary cursor-pointer py-4 px-12 bg-white rounded-[4px] border border-gray-300 transition duration-300 ease-in-out hover:bg-primary hover:text-white;
+}
+.wishlist-product{
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10;
+}
+/* ==== Cart Section ==== */
+
+.page-link{
+  @apply flex items-center gap-2 text-sm font-normal text-black leading-5.25 font-secondary flex-wrap;
+}
+.page-link a{
+  @apply text-black hover:text-primary;
+
+}
+.cart-product-card{
+  @apply flex flex-col items-center gap-y-10 pt-20 w-full;
+}
+.cart-product-title-group{
+  @apply flex items-center gap-4 justify-between w-full lg:px-10 px-2.5 py-6 bg-bg rounded-[4px];
+}
+.cart-product-detail{
+  @apply flex flex-col gap-y-10  w-full pb-6;
+}
+.cart-single-prodict{
+  @apply flex items-center gap-4 justify-between w-full lg:px-10 px-2.5 py-6 bg-bg rounded-[4px];
+}
+.product-dtails{
+  @apply flex items-center gap-4;
+}
+.product-img img{
+  @apply w-12.5 h-9.75 object-cover ;
+}
+.product-name h4,
+.product-price span,
+.product-subtotal span{
+  @apply text-base font-normal text-black leading-6 font-secondary;
+}
+
+.product-quantity input{
+  @apply  border border-gray-300 rounded-[4px] py-1 px-2 focus:outline-none text-sm font-secondary text-black leading-4.5;
+}
+.cart-btn-grp{
+  @apply flex flex-col lg:flex-row items-center justify-between gap-4 w-full pb-20;
+}
+.cart-math{
+  @apply flex flex-col lg:flex-row items-center justify-between gap-4 gap-y-7.5  ;
+}
+.cart-cuppon{
+  @apply flex items-center flex-col lg:flex-row gap-4;
+}
+.cart-cuppon input{
+  @apply border border-gray-300 rounded-[4px] py-4.25 px-6 focus:outline-none text-sm font-secondary text-black leading-4.5;
+}
+.cart-total{
+  @apply text-base font-normal text-black leading-6 font-secondary px-6 py-8 border border-black rounded-[4px];
+}
+.cart-total-detail{
+  @apply flex flex-col gap-y-4 lg:w-117.5 w-full;
+}
+.cart-total h4{
+  @apply text-xl font-medium text-black leading-7 pb-6 font-secondary;
+}
+.cart-total-single{
+  @apply flex items-center justify-between gap-4 pb-4;
+}
+/* Checkout Section */
+.checkout-process{
+  @apply pb-20;
+}
+.checkout-process h2{
+  @apply text-4xl font-medium font-primary text-black leading-7.5 tracking-[1.44px] pb-12;
+}
+.checkout-complete{
+  @apply flex items-center gap-y-7.5 lg:gap-20 flex-col lg:flex-row justify-between;
+}
+.checkout-complete .cot-address{
+  @apply w-full lg:w-[48%];
+}
+.checkout-complete .cot-address form{
+  @apply flex flex-col gap-y-8 w-full ;
+}
+.checkout-complete .cot-address form .input-group{
+  @apply flex flex-col gap-y-1;
+}
+.checkout-complete .cot-address form .input-groups{
+  @apply flex items-center  gap-4;
+}
+.checkout-complete .cot-address form .input-groups label{
+  @apply text-base font-normal text-black leading-6 font-secondary;
+}
+.checkout-complete .cot-address form .input-group label{
+  @apply text-base font-normal text-black leading-6 w-full font-secondary;
+}
+.checkout-complete .cot-address form .input-group input{
+  @apply border border-gray-300 rounded-[4px] py-2 px-4 focus:outline-none text-base font-secondary text-black leading-6;
+}
+/* Checkout Section */
+.payment{
+  @apply flex gap-y-8 flex-col w-full lg:w-[48%];
+}
+.product-dt{
+  @apply flex flex-col items-center gap-y-8 pb-8 w-full;
+}
+.product-st-wrap{
+  @apply flex items-center justify-between gap-4 w-full;
+}
+.cart-total-details{
+  @apply flex flex-col gap-y-4 w-full;
+}
+.cash-on-delivery{
+  @apply flex items-center gap-4;
+}
+.checkout-top-btn{
+  @apply text-base font-medium leading-6 text-black font-secondary cursor-pointer py-4 px-4 bg-white rounded-[4px] border border-gray-300 transition duration-300 ease-in-out hover:bg-primary hover:text-white;
+}
+.place-order-btn{
+  @apply text-base font-medium leading-6 text-black font-secondary cursor-pointer py-4 px-8 bg-primary rounded-[4px] border border-gray-300 transition duration-300 ease-in-out hover:bg-white hover:text-primary;
+}
+/* 404 Section */
+.not-found{
+  @apply flex flex-col items-center gap-y-20 py-25;
+}
+.not-found-title{
+  @apply flex flex-col items-center justify-center gap-y-10;
+}
+.not-found-title h2{
+  @apply text-[6.875rem] font-bold text-black leading-26.75 tracking-[3.3px] font-primary;
+}
+.not-found-title p{
+  @apply text-base font-normal text-black leading-6 font-secondary;
+}
+/* Single Product Page */
+.product-details-section{
+  @apply flex flex-col lg:flex-row items-center gap-10 justify-between ;
+}
+.product-image-sl{
+  @apply w-full lg:w-[60%] overflow-hidden flex flex-col-reverse lg:flex-row gap-7.5;
+}
+.product-image-small{
+  @apply w-full lg:w-[30%] flex lg:flex-col flex-wrap gap-2.5 gap-y-4;
+}
+.product-image-small img{
+  @apply w-[48%] lg:w-full h-30 px-5 py-3 object-cover overflow-hidden bg-center flex flex-wrap items-center justify-center cursor-pointer bg-bg rounded-[4px];
+}
+.product-image-thumbnail{
+  @apply w-full lg:w-[78%] ;
+}
+.product-image-thumbnail img{
+  @apply w-full h-full object-cover px-7 py-25 overflow-hidden rounded-[4px] bg-bg cursor-pointer flex items-center justify-center;
+}
+
+
+.product-detail-content{
+  @apply w-full lg:w-[37%] flex flex-col;
+}
+
+.related-product{
+  @apply py-35;
+}
+.title-review{
+  @apply flex flex-col gap-y-4 mb-4;
+}
+.single-product-title,
+.product-price p{
+  @apply text-2xl font-semibold font-primary text-black leading-6 tracking-[0.72px];
+}
+.single-product-reviews{
+  @apply flex items-center gap-4;
+}
+.product-review{
+  @apply flex items-center gap-2;
+}
+.stock,
+.product-short-dec p{
+  @apply text-sm font-normal  leading-5.25 font-secondary;
+}
+.single-product-stock{
+  @apply text-secondary;
+}
+.product-colors{
+  @apply flex items-center gap-6 py-6;
+}
+.color-title,
+.size-title{
+  @apply text-xl font-normal text-black leading-5 tracking-[0.6px] font-secondary;
+}
+.color-option{
+  @apply flex items-center gap-2;
+}
+.color-option .color{
+  @apply w-5 h-5 rounded-full cursor-pointer;
+}
+.color-option .color-1{
+  @apply bg-primary;
+}
+.color-option .color-2{
+  @apply bg-secondary;
+}
+.color-option .color-3{
+  @apply bg-black;
+}
+.color-option .color-4{
+  @apply bg-bg;
+}
+.product-size{
+  @apply flex items-center gap-6 pb-6;
+}
+.size-option{
+  @apply flex items-center gap-4;
+}
+.size-option .size{
+  @apply w-8 h-8 flex items-center justify-center border border-gray-300 rounded-[4px] cursor-pointer hover:bg-primary hover:text-white transition duration-300 ease-in-out py-2.5  text-sm font-medium font-secondary text-black leading-5.25;
+}
+.product-buy-system{
+  @apply pb-10;
+}
+.product-quantity{
+  @apply flex items-center gap-6;
+}
+.quantity-option{
+  @apply flex items-center gap-4 border rounded-[4px] border-gray-300 py-2.5  h-11 text-xl font-medium font-secondary text-black leading-7 overflow-hidden;
+}
+.quantity-btn,
+.quantity-number{
+  @apply py-2.5 px-2 cursor-pointer;
+}
+.quantity-btn{
+  @apply hover:bg-primary hover:text-white transition duration-300 ease-in-out px-2.75;
+}
+.buy-now-btn{
+  @apply text-base font-medium leading-6 text-text-light font-secondary cursor-pointer py-2.5 px-12 bg-primary hover:bg-secondary rounded-[4px] transition duration-300 ease-in-out;
+}
+.product-wishlist{
+  @apply w-10 h-10 rounded-[4px] border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition duration-300 ease-in-out overflow-hidden p-1;
+}
+.wishlist-btn{
+  @apply w-full h-full flex items-center justify-center cursor-pointer;
+}
+.product-service{ 
+  @apply flex flex-col border border-gray-300 rounded-[4px];
+}
+.product-free-delivery,
+.product-return{
+  @apply flex items-center gap-4 py-6 px-4;
+}
+.sheeping-content,
+.return-content{
+  @apply flex flex-col  gap-y-2;
+}
+.sheeping-content h4,
+.return-content h4{
+  @apply text-base font-medium text-black leading-6 font-secondary;
+}
+.sheeping-content a,
+.return-content a{
+  @apply text-[12px] font-normal text-black leading-4.5 font-secondary underline underline-offset-4;
+}
+
+.return-content p{
+  @apply text-[12px] font-normal text-black leading-4.5 font-secondary;
+}
